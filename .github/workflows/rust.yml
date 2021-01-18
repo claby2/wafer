@@ -11,6 +11,10 @@ jobs:
     steps:
       - name: Git checkout
         uses: actions/checkout@v2
+      - name: Install dependencies
+        run: |
+          sudo apt update -y -qq
+          sudo apt-get install libsdl2-dev libsdl2-ttf-dev
       - name: Install Rust toolchain
         uses: actions-rs/toolchain@v1
         with:
